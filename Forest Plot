@@ -1,0 +1,30 @@
+install.packages ("forestplot")
+library(forestplot)
+
+Data <- tibble (mean = c (0.81, 0.74, 0.84, 0.78), 
+                lower = c (0.66, 0.56, 0.69, 0.58), 
+                upper = c (0.98, 0.99, 1.04, 1.06), 
+                Guide = c (">= 150 mins MVPA", ">= 2 days RT", ">= 150 mins MVPA (RT)", 
+                           ">= 2 days RT (MVPA)"), 
+                HR = c (0.81, 0.74, 0.84, 0.78))
+
+
+header <- tibble (Guide = c ("Physical Activity Guides"), 
+                  HR = c ("Hazard Ratio"))
+
+Data_F <- bind_rows(Data, header)
+View (Data_F)
+
+
+Data_F %>% 
+  forestplot (labeltext = c("Guide", "HR"), 
+              logx = FALSE,
+              zero = 1,
+              xticks = c(0.5, 0.6, 0.7, 0.80, 0.9, 1, 1.10),
+              txt_gp = fpTxtGp(ticks=gpar(cex=1)),
+              col = fpColors(box = "royalblue",
+                             line = "darkblue",
+                             summary = "royalblue", 
+                             zero = "red"))
+
+?forestplot 
