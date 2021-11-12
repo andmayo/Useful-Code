@@ -28,3 +28,32 @@ Data_F %>%
                              zero = "red"))
 
 ?forestplot 
+
+
+
+# More than one on a table 
+row_names_F1 <- list (list ("G1", "G2", "G3", "G4"))
+test_data_F1 <- data.frame(coef = c (0.81, 0.74, 0.84, 0.78), 
+                           low = c (0.66, 0.56, 0.69, 0.58), 
+                           high = c (0.98, 0.99, 1.04, 1.06))
+test_data_F2 <- data.frame(coef = c (0.84, 0.80, 0.87, 0.83), 
+                           low = c (0.73, 0.66, 0.75, 0.68), 
+                           high = c (0.98, 0.98, 1.02, 1.03))
+test_data_F3 <- data.frame (coef = c (0.88, 0.86, 0.90, 0.89), 
+                            low = c (0.74, 0.70, 0.75, 0.72), 
+                            high = c (1.06, 1.07, 1.08, 1.10))
+
+
+forestplot (mean = cbind (test_data_F1 [,"coef"], test_data_F2 [, "coef"], test_data_F3 [, "coef"]),
+             lower = cbind (test_data_F1 [, "low"], test_data_F2 [, "low"], test_data_F3 [, "low"]), 
+             upper = cbind (test_data_F1 [, "high"], test_data_F2 [, "high"], test_data_F3 [, "high"]),
+             labeltext = rownames (row_names_F1), 
+             legend = c ("FI centered at 0.10", "FI centered at 0.20", "FI centered at 0.30"),
+             boxsize = 0.3, 
+             col = fpColors(box = c("darkred", "blue", "black"), 
+                            line = c ("darkred", "blue", "black")), 
+            zero = 1,
+            xticks = c(0.5, 0.6, 0.7, 0.80, 0.9, 1, 1.10),
+            txt_gp = fpTxtGp(ticks=gpar(cex=1)),
+             new_page = TRUE
+             )
