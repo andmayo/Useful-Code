@@ -1,0 +1,146 @@
+# Full MVPA, Half RT 
+```{r}
+#Male, 30
+Groups <- c(">= 15- MVPA & >= 2 RT", ">= 150 MVPA & < 2 RT", "< 150 MVPA & >= 2 RT", "< 150 MVPA & < 2 RT")
+M30_HR <- c(-0.23, -0.11, -0.12, 0)
+M30_HR_Max <- c (-0.32, -0.18, -0.20, 0)
+M30_HR_Min <- c (-0.14, -0.033, -0.033, 0)
+
+M30_HR_DF <- data.frame(Groups, M30_HR, M30_HR_Max, M30_HR_Min)
+View (M70_HM_DF)
+M30_HR_DF$Groups <- factor (M30_HR_DF$Groups, levels = c(">= 150 MVPA & >= 2 RT", ">= 150 MVPA & < 2 RT", "< 150 MVPA & >= 2 RT", "< 150 MVPA & < 2 RT"))
+
+M30_HR_G<-ggplot(M30_HR_DF, aes (x = Groups, y = M30_HR)) +
+  theme (legend.position = "none", 
+         axis.title.y = element_blank(),
+         text = element_text(size = 20),
+         axis.ticks.x = element_blank(),
+         axis.text.x = element_blank())+
+  geom_point (aes(color = Groups), size = 5) +
+  labs (x  = "Centered at 30", y = "Frailty Index") +
+  scale_y_continuous(limits = c (-0.40, 0.05)) +
+  geom_hline(yintercept = 0, linetype = "dashed", color = "red")+ 
+  geom_errorbar(aes (ymin = M30_HR_Min, ymax = M30_HR_Max), width =.05)
+M30_HR_G
+
+#Male, 40
+Groups <- c(">= 150 MVPA & >= 2 RT", ">= 150 MVPA & < 2 RT", "< 150 MVPA & >= 2 RT", "< 150 MVPA & < 2 RT")
+M40_HR <- c(-0.25, -0.13, -0.11, 0)
+M40_HR_Max <- c (-0.32, -0.19,-0.18, 0)
+M40_HR_Min <- c (-0.18, -0.076, -0.047, 0)
+
+M40_HR_DF <- data.frame(Groups, M40_HR, M40_HR_Max, M40_HR_Min)
+View (M70_HM_DF)
+M40_HR_DF$Groups <- factor (M40_HR_DF$Groups, levels = c(">= 150 MVPA & >= 2 RT", ">= 150 MVPA & < 2 RT", "< 150 MVPA & >= 2 RT", "< 150 MVPA & < 2 RT"))
+
+M40_HR_G<-ggplot(M40_HR_DF, aes (x = Groups, y = M40_HR)) +
+  theme (legend.position = "none", 
+         axis.title.y = element_blank(),
+         text = element_text(size = 20),
+         axis.ticks.x = element_blank(),
+         axis.text.x = element_blank())+
+  geom_point (aes(color = Groups), size = 5) +
+  labs (x  = "Centered at 40", y = "Frailty Index") +
+  scale_y_continuous(limits = c (-0.40, 0.05)) +
+  geom_hline(yintercept = 0, linetype = "dashed", color = "red")+ 
+  geom_errorbar(aes (ymin = M40_HR_Min, ymax = M40_HR_Max), width =.05)
+M40_HR_G
+
+#Male, 50
+Groups <- c(">= 150 MVPA & >= 2 RT", ">= 150 MVPA & < 2 RT", "< 150 MVPA & >= 2 RT", "< 150 MVPA & < 2 RT")
+M50_HR <- c(-0.27, -0.16, -0.11, 0)
+M50_HR_Max <- c (-0.33, -0.21, -0.17, 0)
+M50_HR_Min <- c (-0.20, -0.11, -0.047, 0)
+
+M50_HR_DF <- data.frame(Groups, M50_HR, M50_HR_Max, M50_HR_Min)
+View (M50_HR_DF)
+M50_HR_DF$Groups <- factor (M50_HR_DF$Groups, levels = c(">= 150 MVPA & >= 2 RT", ">= 150 MVPA & < 2 RT", "< 150 MVPA & >= 2 RT", "< 150 MVPA & < 2 RT"))
+
+M50_HR_G<-ggplot(M50_HR_DF, aes (x = Groups, y = M50_HR)) +
+  theme (legend.position = "none", 
+         axis.title.y = element_blank(),
+         text = element_text(size = 20),
+         axis.ticks.x = element_blank(),
+         axis.text.x = element_blank())+
+  geom_point (aes(color = Groups), size = 5) +
+  labs (x  = "Centered at 50", y = "Frailty Index") +
+  scale_y_continuous(limits = c (-0.40, 0.05)) +
+  geom_hline(yintercept = 0, linetype = "dashed", color = "red")+ 
+  geom_errorbar(aes (ymin = M50_HR_Min, ymax = M50_HR_Max), width =.05)
+M50_HR_G
+
+#Male, 60
+Groups <- c(">= 150 MVPA & >= 2 RT", ">= 150 MVPA & < 2 RT", "< 150 MVPA & >= 2 RT", "< 150 MVPA & < 2 RT")
+M60_HR <- c(-0.28, -0.19, -0.10, 0)
+M60_HR_Max <- c (-0.35, -0.23, -0.18, 0)
+M60_HR_Min <- c (-0.21, -0.14, -0.031, 0)
+
+M60_HR_DF <- data.frame(Groups, M60_HR, M60_HR_Max, M60_HR_Min)
+View (M50_HR_DF)
+M60_HR_DF$Groups <- factor (M60_HR_DF$Groups, levels = c(">= 150 MVPA & >= 2 RT", ">= 150 MVPA & < 2 RT", "< 150 MVPA & >= 2 RT", "< 150 MVPA & < 2 RT"))
+
+M60_HR_G<-ggplot(M60_HR_DF, aes (x = Groups, y = M60_HR)) +
+  theme (legend.position = "none", 
+         axis.title.y = element_blank(),
+         text = element_text(size = 20),
+         axis.ticks.x = element_blank(),
+         axis.text.x = element_blank())+
+  geom_point (aes(color = Groups), size = 5) +
+  labs (x  = "Centered at 60", y = "Frailty Index") +
+  scale_y_continuous(limits = c (-0.40, 0.05)) +
+  geom_hline(yintercept = 0, linetype = "dashed", color = "red")+ 
+  geom_errorbar(aes (ymin = M60_HR_Min, ymax = M60_HR_Max), width =.05)
+M60_HR_G
+
+
+#Male, 70
+Groups <- c(">= 150 MVPA & >= 2 RT", ">= 150 MVPA & < 2 RT", "< 150 MVPA & >= 2 RT", "< 150 MVPA & < 2 RT")
+M70_HR <- c(-0.30, -0.21, -0.10, 0)
+M70_HR_Max <- c (-0.38, -0.27, -0.20, 0)
+M70_HR_Min <- c (-0.22, -0.16, -0.0051, 0)
+
+M70_HR_DF <- data.frame(Groups, M70_HR, M70_HR_Max, M70_HR_Min)
+View (M50_HR_DF)
+M70_HR_DF$Groups <- factor (M70_HR_DF$Groups, levels = c(">= 150 MVPA & >= 2 RT", ">= 150 MVPA & < 2 RT", "< 150 MVPA & >= 2 RT", "< 150 MVPA & < 2 RT"))
+
+M70_HR_G<-ggplot(M70_HR_DF, aes (x = Groups, y = M70_HR)) +
+  theme (legend.position = "none", 
+         axis.title.y = element_blank(),
+         text = element_text(size = 20),
+         axis.ticks.x = element_blank(),
+         axis.text.x = element_blank())+
+  geom_point (aes(color = Groups), size = 5) +
+  labs (x  = "Centered at 70", y = "Frailty Index") +
+  scale_y_continuous(limits = c (-0.40, 0.05)) +
+  geom_hline(yintercept = 0, linetype = "dashed", color = "red")+ 
+  geom_errorbar(aes (ymin = M70_HR_Min, ymax = M70_HR_Max), width =.05)
+M70_HR_G
+
+#Merge 
+plot_grid(M30_HR_G, M40_HR_G, M50_HR_G, M60_HR_G, M70_HR_G, labels = c("A", "B", "C", "D", "E"),
+          ncol = 5, nrow = 1)
+
+plot <- plot_grid(M30_HR_G + theme (legend.position = "none"), 
+                  M40_HR_G + theme (legend.position = "none"), 
+                  M50_HR_G+ theme (legend.position = "none"),
+                  M60_HR_G+ theme (legend.position = "none"), 
+                  M70_HR_G+ theme (legend.position = "none"), 
+                  align = 'vh', 
+                  labels = c("A", "B", "C", "D", "E"), 
+                  hjust = -1, 
+                  nrow = 1)
+plot
+
+View (FS_DS)
+
+#Make Legend 
+P_1 <-ggplot(M70_HR_DF, aes (x = Groups, y = M70_HR)) +
+  theme (axis.title.y = element_blank(),
+         text = element_text(size = 20),
+         axis.ticks.x = element_blank(),
+         axis.text.x = element_blank())+
+  geom_point (aes(color = Groups), size = 5)
+
+P_1
+
+legend <- get_legend(P_1+ theme(legend.box.margin = margin(0,0,0,12)))
