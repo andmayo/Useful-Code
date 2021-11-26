@@ -1,3 +1,6 @@
+
+BAR PLOTS 
+
 # Full MVPA, Half RT 
 ```{r}
 #Male, 30
@@ -144,3 +147,24 @@ P_1 <-ggplot(M70_HR_DF, aes (x = Groups, y = M70_HR)) +
 P_1
 
 legend <- get_legend(P_1+ theme(legend.box.margin = margin(0,0,0,12)))
+
+
+PIE CHART 
+
+MM_1 <- data.frame (
+  group = c ("Died", "Survived"), 
+  value = c (391, 4403)
+)
+
+4794 - 391 
+
+MPie1<-
+  ggplot (MM_1, aes (x = "", y = value, fill = group)) + 
+  geom_bar (stat = "identity", width = 1) + 
+  coord_polar ("y", start = 0) + 
+  theme_void()+ 
+  theme (legend.position = "none") + 
+  scale_fill_manual(values = c ("#BE2A3E", "#EC754A"))
+MPie1
+
+
